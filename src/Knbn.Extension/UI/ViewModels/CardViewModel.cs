@@ -41,6 +41,27 @@ namespace Knbn.Extension.UI.ViewModels
 
         public bool IsStale => (DateTime.UtcNow - _card.UpdatedAt).TotalHours > 24;
 
+        public System.Windows.Media.SolidColorBrush BorderColor
+        {
+            get
+            {
+                if (_card.Status == WorkItemStatus.Done)
+                    return new System.Windows.Media.SolidColorBrush(
+                        System.Windows.Media.Color.FromRgb(0x60, 0x8B, 0x4E));
+                if (HasActiveSessions)
+                    return new System.Windows.Media.SolidColorBrush(
+                        System.Windows.Media.Color.FromRgb(0x4E, 0xC9, 0xB0));
+                return new System.Windows.Media.SolidColorBrush(
+                    System.Windows.Media.Color.FromRgb(0xDC, 0xDC, 0xAA));
+            }
+        }
+
+        public double CardOpacity => IsStale ? 0.5 : 1.0;
+
+        public bool HasNote => LatestNote != null;
+
+        public DateTime UpdatedAt => _card.UpdatedAt;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
