@@ -1,2 +1,12 @@
 .worktrees/
 .superpowers/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+*.vsix
+packages/
+TestResults/
