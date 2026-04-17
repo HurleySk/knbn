@@ -32,15 +32,9 @@ Add a `SessionEnd` hook to your Claude Code user settings (`~/.claude/settings.j
 }
 ```
 
-### 3. Install Skills
+### 3. Install Claude Code Skills
 
-Copy the skills from the `skills/` directory to your Claude Code commands directory:
-
-```bash
-cp skills/knbn.md ~/.claude/commands/knbn.md
-cp skills/knbn-join.md ~/.claude/commands/knbn-join.md
-cp skills/knbn-status.md ~/.claude/commands/knbn-status.md
-```
+Claude Code skills for knbn are maintained in [claude-knbn-skill](https://github.com/HurleySk/claude-knbn-skill) and distributed via the HurleySk marketplace. Install from the marketplace or add the plugin directly.
 
 ### 4. Open the Board
 
